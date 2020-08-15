@@ -7,3 +7,8 @@
   margin: 1em;
   user-suser-select: none;
 }
+
+.activeCard {
+  color: red;
+  background: pink;
+ }
