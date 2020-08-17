@@ -3,12 +3,95 @@
   text-align: center;
   width: 3em;
   font-size: 2em;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  margin: 1em;
-  user-suser-select: none;
+  box-shadow: 0 4px 8px 0 rgba(240, 3, 3, 0.842);
+  margin: 0.7em;
+  user-select: none;
+  background-color: whitesmoke;
 }
 
 .activeCard {
   color: red;
   background: pink;
- }
+}
+
+body {
+  background-size: 1500px,1200px;
+  background-image: url("https://www.designshock.com/wp-content/uploads/2015/02/prisma.jpg");
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: whitesmoke;
+  text-shadow: 2px 2px red;
+}
+
+h2 {
+  text-align: left;
+  font-size: 20px;
+  color: whitesmoke;
+  margin-left: 1em;
+}
+
+center {
+  background-size: 500px,100px;
+  background-image: url("https://www.htmlcsscolor.com/preview/gallery/C00000.png");
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 10px 28px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-left: 1em;
+  coler: red
+}
+
+.button1 {
+  background-color:  rgba(244, 252, 244, 0.952);
+  color: red;
+}
+
+.button1:hover {
+  background-color: whitesmoke;
+  color: red;
+  
+}
+
+.button2 {
+  background-color: whitesmoke;
+  color: red;
+}
+
+.button2:hover {
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+}
+
+.activeText {
+  margin-left: 2em;
+  display: inline-flex;
+  font-size: 40px;
+  color: red;
+  text-shadow: 2px 2px #0c0101;
+  background-color: white;
+  border: 4px solid red;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.activeText2 {
+  display: flow-root;
+  margin-top: 5em;
+  font-size: 42px;
+  text-align: center;
+  color: red;
+  text-shadow: 2px 2px #0c0101;
+  background-color: cornsilk;
+}

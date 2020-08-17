@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import _, { attempt } from 'lodash';
 import CharacterCard from './CharacterCard';
-import _ from 'lodash';
 
-   const prepareStateFromWord = (given_word) => {
-     let word = given_word.toUpperCase()
-     let chars = _.shuffle(Array.from(word))
-     return {
+var text;
+var win;
+
+const prepareStateFromWord = (given_word) => {
+    let word = given_word.toUpperCase()
+    let chars = _.shuffle(Array.from(word))
+    return {
         word,
         chars,
         attempt: 1,
@@ -13,36 +16,40 @@ import _ from 'lodash';
         completed: false
     }
 }
-export default function WordCard(props){
-    
-    const [state, setState] = useState(prepareStateFromWord(props.value))
 
-    const activationHandler = c => {
+export default function WordCard(props) {
+
+    const [state, setState] = useState(prepareStateFromWord(props.value))
+    
+    const activationHandler = (c) => {
         console.log(`${c} has been activated.`)
 
         let guess = state.guess + c
+        text = guess
         setState({...state, guess})
 
         if(guess.length == state.word.length){
             if(guess == state.word){
                 console.log('yeah!')
-                setState({...state, completed: true})
+                setState({...state, guess: '', completed: true})
+                win="Congratulations !";
             }else{
-                console.log('reset, next attemp')
+                console.log('reset, next attempt')
                 setState({...state, guess: '', attempt: state.attempt + 1})
+                win="Please Try Again";     
             }
         }
-        
     }
-    
+
     return (
-       <div>
-           {
-               state.chars.map((c, i) =>
-                 <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt}/>
+        <div>
+            {
+                state.chars.map((c, i) => 
+                    <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt}/>
                 )
-           }
-            
-       </div>
+            }
+            <div className="activeText">{text}</div>
+            <div className="activeText2">{win}</div>
+        </div>
     )
 }
